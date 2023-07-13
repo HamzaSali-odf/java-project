@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects - CSS</title>
+    <style>
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px;
+      }
+      .calculate-button {
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 12px 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Youtube subscribe button</p>
+    <button
+      onclick="
+    subscribe();
+    "
+      class="js-subscribe-button subscribe-button"
+    >
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping calculator</p>
+    <input
+      type="text"
+      placeholder="Cost of order"
+      class="js-input-value cost-input"
+      onkeydown="
+        handleCostKeydown(event);
+      "
+    />
+    <button
+      class="calculate-button"
+      onclick="
+    getValue();
+    "
+    >
+      Calculate
+    </button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+      String(25);
+      console.log("25" + 5);
+      console.log("25" - 5);
+
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          getValue();
+        }
+      }
+      function subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerText = "Subscribed";
+          buttonElement.classList.add("is-subscribed");
+        } else {
+          buttonElement.innerText = "Subscribe";
+          buttonElement.classList.remove("is-subscribed");
+        }
+      }
+
+      function getValue() {
+        let inputValue = document.querySelector(".js-input-value");
+
+        let cost = Number(inputValue.value); // when we get a value from the DOM, the value will be string! inputValue.value, this is a string.
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+        document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
+      }
+    </script>
+  </body>
+</html>

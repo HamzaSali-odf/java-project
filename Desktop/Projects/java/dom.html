@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">Second Button</button>
+    <script>
+      /* console.log(document.title);
+      document.title = "Changed";
+
+      document.log(document.body);
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+        document.body.innerHTML = "Changed";
+      document.body.innerHTML = "<button>good job!</button>";
+
+         document.body.innerHTML = "hello";
+        document.title = "Good job, here break another one";
+      */
+
+      //   document.querySelector() - lets us get any elemnt from the page and put it inside Javascript
+
+      console.log(document.querySelector("button").innerHTML);
+      document.querySelector("button").innerHTML = "Changed";
+      document.querySelector(".js-button").innerHTML =
+        " Another changed button";
+
+      const buttonElement = document.querySelector(".js-button");
+      // buttonElement will have this as a value : <button class="js-button">Second Button</button>
+
+      // Using document.querySelector we can get any element on the page, put it inside the javascript and control HTML inside that element
+    </script>
+  </body>
+</html>

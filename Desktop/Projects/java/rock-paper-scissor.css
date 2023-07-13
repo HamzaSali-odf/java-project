@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(25, 25, 25);
+    color: white;
+  }
+  .button {
+    background-color: transparent;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border: 1px solid white;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .icon {
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+  }

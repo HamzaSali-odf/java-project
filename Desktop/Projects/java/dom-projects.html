@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>Youtube subscribe button</p>
+    <button
+      onclick="
+    subscribe();
+    "
+      class="js-subscribe-button"
+    >
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping calculator</p>
+    <input
+      type="text"
+      placeholder="Cost of order"
+      class="js-input-value"
+      onkeydown="
+        handleCostKeydown(event);
+      "
+    />
+    <button
+      onclick="
+    getValue();
+    "
+    >
+      Calculate
+    </button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+      String(25);
+      console.log("25" + 5);
+      console.log("25" - 5);
+
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          getValue();
+        }
+      }
+      function subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerText = "Subscribed";
+        } else {
+          buttonElement.innerText = "Subscribe";
+        }
+      }
+
+      function getValue() {
+        let inputValue = document.querySelector(".js-input-value");
+
+        let cost = Number(inputValue.value); // when we get a value from the DOM, the value will be string! inputValue.value, this is a string.
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+
+        document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
+      }
+    </script>
+  </body>
+</html>
